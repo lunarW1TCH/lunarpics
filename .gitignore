@@ -25,7 +25,8 @@ package-lock.json
 .cache/
 .DS_Store
 .prettierrc
-
+todo.txt
+.eslintrc.json
 
 
 npm-debug.log*
