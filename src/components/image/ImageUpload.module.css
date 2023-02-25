@@ -1,0 +1,52 @@
+.container_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+}
+.container_div {
+  display: flex;
+  flex-direction: column;
+}
+.container_btn {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: 10px;
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+  max-width: 50rem;
+  height: 20rem;
+  /* max-height: 20rem; */
+  background: #e2e2e267;
+  border: none;
+  font-size: large;
+  border-radius: 15px;
+}
+
+.image {
+  /* width: auto; */
+  max-width: fit-content;
+}
+
+.btn {
+  display: flex;
+  align-self: center;
+  padding: 10px;
+  padding-inline: 20px;
+  margin-inline: 10px;
+  width: fit-content;
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-secondary);
+  border-radius: 20px;
+  font-size: large;
+}
