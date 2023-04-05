@@ -11,6 +11,10 @@ import Spinner from '../UI/Spinner';
 import ImageFormData from '../../models/ImgFormData';
 
 import classes from './ImageForm.module.css';
+import Select from '../Select';
+import OptionsElemental from '../options/OptionsElemental';
+import OptionsStars from '../options/OptionsStars';
+import OptionsPlanets from '../options/OptionsPlanets';
 
 const ImageForm = () => {
   // states
@@ -44,45 +48,28 @@ const ImageForm = () => {
     // reset img url
     setImgUrl('');
 
-    let url = 'https://app.pixelencounter.com/api/basic/';
-
-    if (isPlanets) {
-      url += 'planets';
-    } else {
-      url += 'stars';
-    }
-
     // adding random seed to url
     const frame = getRandomInt(MAX_INT);
-    url += `?frame=${frame}`;
-    url += `&width=${imageFormData.width}`;
-    url += `&height=${imageFormData.height}`;
 
-    // adding parameters to url
-
-    if (imageFormData.disableBackground) {
-      url += '&disableBackground=true';
-    }
-
-    if (imageFormData.disableStars) {
-      url += '&disableStars=true';
-    }
-
-    if (isPlanets && imageFormData.disableSatellites) {
-      url += '&disableSatellites=true';
-    }
-
-    if (isPlanets) {
-      url += `&colorMode=${imageFormData.colorMode}`;
-    }
-
-    if (isPlanets && imageFormData.isElemental) {
-      url += `&subColorMode=${imageFormData.subColorModePlanets}`;
-    }
-
-    if (isStars) {
-      url += `&subColorMode=${imageFormData.subColorModeStars}`;
-    }
+    const url = `https://app.pixelencounter.com/api/basic/${
+      isPlanets ? 'planets' : 'stars'
+    }?frame=${frame}&width=${imageFormData.width}&height=${
+      imageFormData.height
+    }&disableBackground=${imageFormData.disableBackground}&disableStars=${
+      imageFormData.disableStars
+    }${
+      isPlanets && imageFormData.disableSatellites
+        ? '&disableBackground=true'
+        : ''
+    }${
+      isPlanets
+        ? '&colorMode=' + imageFormData.colorMode
+        : '&subColorMode=' + imageFormData.subColorModeStars
+    }${
+      isPlanets && imageFormData.isElemental
+        ? '&subColorMode=' + imageFormData.subColorModePlanets
+        : ''
+    }`;
 
     setImgUrl(url);
   };
@@ -182,58 +169,39 @@ const ImageForm = () => {
   // select elements
 
   const selectElemental = (
-    <select
+    <Select
       name="elemental"
       id="subColorModePlanets"
       onChange={selectOnChangeHandler}
       className={classes.select}
       value={imageFormData.subColorModePlanets}
     >
-      <option value={'0'}>Fire</option>
-      <option value={'1'}>Water</option>
-      <option value={'2'}>Earth</option>
-      <option value={'3'}>Wind</option>
-      <option value={'4'}>Holy</option>
-      <option value={'5'}>Dark</option>
-      <option value={'6'}>Ice</option>
-      <option value={'7'}>Metal</option>
-      <option value={'8'}>Lava</option>
-      <option value={'9'}>Toxic</option>
-    </select>
+      <OptionsElemental />
+    </Select>
   );
 
-  // without white option because it is broken
   const selectStars = (
-    <select
+    <Select
       name="stars"
       id="subColorModeStars"
       onChange={selectOnChangeHandler}
       className={classes.select}
       value={imageFormData.subColorModeStars}
     >
-      {/* <option value={'0'}>White</option> */}
-      <option value={'1'}>Blue</option>
-      <option value={'2'}>Red</option>
-      <option value={'3'}>Brown</option>
-    </select>
+      <OptionsStars />
+    </Select>
   );
 
   const selectPlanets = (
-    <select
+    <Select
       name="planets"
       id="colorMode"
       onChange={selectOnChangeHandler}
       className={classes.select}
       value={imageFormData.colorMode}
     >
-      <option value={'0'}>Analogous</option>
-      <option value={'1'}>Complimentary</option>
-      <option value={'2'}>Split Complimentary</option>
-      <option value={'3'}>Triad</option>
-      <option value={'4'}>Cavity</option>
-      <option value={'5'}>Earth</option>
-      <option value={'6'}>Elemental</option>
-    </select>
+      <OptionsPlanets />
+    </Select>
   );
 
   const imgDiv = (
