@@ -3,13 +3,14 @@ import HomePage from './pages/Home';
 import PlanetsPage from './pages/Planets';
 import RootLayout from './pages/Root';
 import StarsPage from './pages/Stars';
+import ErrorPage from './pages/Error';
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
       element: <RootLayout />,
-      // TODO: error element
+      errorElement: <ErrorPage />,
       children: [
         { index: true, element: <HomePage /> },
         {
