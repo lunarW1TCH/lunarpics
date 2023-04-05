@@ -6,7 +6,7 @@ import {
   MIN_WIDTH,
   MAX_INT,
 } from '../../helpers/config';
-import { getRandomInt } from '../../helpers/helpers';
+import { getRandomInt, clamp } from '../../helpers/helpers';
 import Spinner from '../UI/Spinner';
 import ImageFormData from '../../models/ImgFormData';
 
@@ -92,17 +92,19 @@ const ImageForm = () => {
     let { value } = e.currentTarget;
     let updatedValue = {};
 
+    const n = Number(value);
+
     // on blur sets values to their min or max
 
     if (id === 'width') {
-      if (Number(value) > MAX_WIDTH) value = String(MAX_WIDTH);
-      if (Number(value) < MIN_WIDTH) value = String(MIN_WIDTH);
+      const clamped = clamp(n, MIN_WIDTH, MAX_WIDTH);
+      value = String(clamped);
       updatedValue = { width: value };
     }
 
     if (id === 'height') {
-      if (Number(value) > MAX_HEIGHT) value = String(MAX_HEIGHT);
-      if (Number(value) < MIN_HEIGHT) value = String(MIN_HEIGHT);
+      const clamped = clamp(n, MIN_HEIGHT, MAX_HEIGHT);
+      value = String(clamped);
       updatedValue = { height: value };
     }
 
