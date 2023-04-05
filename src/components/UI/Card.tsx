@@ -1,4 +1,4 @@
-import classes from './Card.module.css';
+import classes from './Card.module.scss';
 import Props from '../../models/Props';
 
 type CardProps = Props & {

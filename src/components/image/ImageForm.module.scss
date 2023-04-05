@@ -1,0 +1,78 @@
+@import '../../base.scss';
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 20rem;
+  padding: 1rem;
+}
+
+.input {
+  width: 3rem;
+  margin-left: 3rem;
+}
+
+.checkbox {
+  margin-left: 6rem;
+}
+
+.label {
+  width: 9rem;
+}
+
+.button {
+  width: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  border: 0px 0px 1px 1px;
+  border-color: $secondary-color;
+  background-color: $primary-color;
+  font-size: 24px;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $secondary-color;
+  }
+}
+
+.select {
+  width: 8rem;
+}
+
+.image {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @media (max-width: 650px) {
+    max-width: 90%;
+  }
+}
+
+.containerImage {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+
+  span {
+    visibility: hidden;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: $dark-color;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    span {
+      visibility: visible;
+    }
+  }
+}

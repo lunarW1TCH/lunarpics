@@ -1,4 +1,4 @@
-export default interface ImageFormData {
+interface ImageFormData {
   width: number;
   height: number;
   disableBackground: boolean;
@@ -9,3 +9,5 @@ export default interface ImageFormData {
   subColorModeStars: string;
   isElemental: boolean;
 }
+
+export default ImageFormData;

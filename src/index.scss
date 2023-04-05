@@ -1,23 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=VT323');
+
+@import './base.scss';
+
 * {
   box-sizing: border-box;
   font-family: 'VT323', sans-serif;
 }
 
-:root {
-  --color-primary: #ff0055;
-  --color-secondary: #d30046;
-  --color-tetriary: #470018;
-  --color-text-primary: #262626;
-  --color-text-secondary: #646464;
-  --color-text-tetriary: #cbcbcb;
-  --color-light: #ffffff;
-  --color-dark: #000000;
-}
-
 body {
   margin: 0;
-  font-size: larger;
+  font-size: $font-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./../public/background.png);

@@ -1,0 +1,32 @@
+@import '../base.scss';
+
+.header {
+  padding: 2rem;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: $font-header;
+}
+
+.list {
+  gap: 2rem;
+  list-style: none;
+  display: flex;
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $secondary-color;
+    }
+  }
+}
+
+.active {
+  color: $primary-color;
+}
+
+.inactive {
+  color: $light-color;
+}

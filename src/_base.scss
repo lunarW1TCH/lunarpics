@@ -1,0 +1,19 @@
+$primary-color: #ff0055;
+$secondary-color: #d30046;
+$tetriary-color: #470018;
+$text-primary-color: #262626;
+$text-secondary-color: #646464;
+$text-tetriary-color: #cbcbcb;
+$light-color: #ffffff;
+$dark-color: #000000;
+
+$font-base: 20px;
+$font-h1: 68px;
+$font-header: 28px;
+
+.h1 {
+  color: $light-color;
+  font-size: $font-h1;
+  width: 100%;
+  text-align: center;
+}
