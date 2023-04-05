@@ -1,3 +1,5 @@
+@import '../../base.scss';
+
 .loader {
   margin-top: 20px;
   align-self: center;
@@ -5,7 +7,7 @@
   overflow: hidden;
   height: 5px;
   width: 5px;
-  color: var(--color-primary);
+  color: $primary-color;
   box-shadow: -10px -10px 0 5px, -10px -10px 0 5px, -10px -10px 0 5px,
     -10px -10px 0 5px;
   animation: loader-38 3s infinite;
