@@ -2,7 +2,7 @@ import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
 import Footer from '../components/Footer';
 import MainNavigation from '../components/MainNavigation';
 
-import classes from './Error.module.css';
+import classes from './Error.module.scss';
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -23,10 +23,10 @@ const ErrorPage = () => {
   }
 
   return (
-    <div className={classes.div}>
+    <div className={classes.containerError}>
       <MainNavigation />
-      <h1>{h1}</h1>
-      <p>{message}</p>
+      <h1 className={classes.h1}>{h1}</h1>
+      <p className={classes.p}>{message}</p>
       <Footer />
     </div>
   );

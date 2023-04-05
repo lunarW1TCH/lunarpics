@@ -4,14 +4,14 @@ import Card from '../components/UI/Card';
 import planet from '../images/planets.png';
 import star from '../images/stars.png';
 
-import classes from './Home.module.css';
+import classes from './Home.module.scss';
 
 const HomePage = () => {
   return (
     <>
       <h1 className={classes.h1}>Home</h1>
-      <div className={classes.div}>
-        <Card className={classes.card}>
+      <div className={classes.containerHome}>
+        <Card className={classes.containerLink}>
           <NavLink className={classes.link} to="/planets">
             Generate a unique planet:
           </NavLink>
@@ -19,7 +19,7 @@ const HomePage = () => {
             <img src={planet} alt="planet" className={classes.img} />
           </NavLink>
         </Card>
-        <Card className={classes.card}>
+        <Card className={classes.containerLink}>
           <NavLink to="/stars" className={classes.link}>
             And the star it orbits around:
           </NavLink>

@@ -10,7 +10,7 @@ import { getRandomInt, clamp } from '../../helpers/helpers';
 import Spinner from '../UI/Spinner';
 import ImageFormData from '../../models/ImgFormData';
 
-import classes from './ImageForm.module.css';
+import classes from './ImageForm.module.scss';
 import Select from '../Select';
 import OptionsElemental from '../options/OptionsElemental';
 import OptionsStars from '../options/OptionsStars';
@@ -205,12 +205,12 @@ const ImageForm = () => {
   );
 
   const imgDiv = (
-    <div className={classes.imgDiv}>
+    <div className={classes.containerImage}>
       <img
         src={imgUrl}
         alt="celestial body"
         onLoad={imgOnLoadHandler}
-        className={classes.img}
+        className={classes.image}
       />
       <span>'Right click' and 'Save image as' to download</span>
     </div>
@@ -255,7 +255,7 @@ const ImageForm = () => {
           id="disableBackground"
           checked={imageFormData.disableBackground}
           onChange={inputOnChangeHandler}
-          className={classes.input}
+          className={classes.checkbox}
         />
         <label htmlFor="disableStars" className={classes.label}>
           Disable Stars
@@ -265,7 +265,7 @@ const ImageForm = () => {
           id="disableStars"
           checked={imageFormData.disableStars}
           onChange={inputOnChangeHandler}
-          className={classes.input}
+          className={classes.checkbox}
         />
         {isPlanets && (
           <label htmlFor="disableSatellites" className={classes.label}>
@@ -278,16 +278,23 @@ const ImageForm = () => {
             id="disableSatellites"
             checked={imageFormData.disableSatellites}
             onChange={inputOnChangeHandler}
-            className={classes.input}
+            className={classes.checkbox}
           />
         )}
         <label htmlFor="colorMode" className={classes.label}>
           Style
         </label>
         {isPlanets && selectPlanets}
+        {isPlanets && imageFormData.isElemental && (
+          <label htmlFor="subColorMode" className={classes.label}>
+            Substyle
+          </label>
+        )}
         {isPlanets && imageFormData.isElemental && selectElemental}
         {isStars && selectStars}
-        <button type="submit">SUBMIT!</button>
+        <button className={classes.button} type="submit">
+          SUBMIT!
+        </button>
       </form>
     </>
   );
