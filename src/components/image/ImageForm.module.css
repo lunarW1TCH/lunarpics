@@ -30,7 +30,7 @@ button {
 }
 button:hover {
   cursor: pointer;
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
 }
 
 select {
@@ -42,4 +42,23 @@ img {
   margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.imgDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgDiv span {
+  display: flex;
+  visibility: hidden;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: black;
+}
+
+.imgDiv:hover span {
+  visibility: visible;
 }

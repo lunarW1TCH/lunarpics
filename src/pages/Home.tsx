@@ -7,8 +7,6 @@ import star from '../images/stars.png';
 import classes from './Home.module.css';
 
 const HomePage = () => {
-  // TODO: add a description and an example star and planet
-
   return (
     <>
       <h1 className={classes.h1}>Home</h1>

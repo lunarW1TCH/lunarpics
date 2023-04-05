@@ -87,8 +87,33 @@ const ImageForm = () => {
     setImgUrl(url);
   };
 
+  const inputOnBlurHandler = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { id } = e.currentTarget;
+    let { value } = e.currentTarget;
+    let updatedValue = {};
+
+    // on blur sets values to their min or max
+
+    if (id === 'width') {
+      if (Number(value) > MAX_WIDTH) value = String(MAX_WIDTH);
+      if (Number(value) < MIN_WIDTH) value = String(MIN_WIDTH);
+      updatedValue = { width: value };
+    }
+
+    if (id === 'height') {
+      if (Number(value) > MAX_HEIGHT) value = String(MAX_HEIGHT);
+      if (Number(value) < MIN_HEIGHT) value = String(MIN_HEIGHT);
+      updatedValue = { height: value };
+    }
+
+    setImageFormData(prevImageFormData => ({
+      ...prevImageFormData,
+      ...updatedValue,
+    }));
+  };
+
   const inputOnChangeHandler = (e: React.FormEvent<HTMLInputElement>): void => {
-    const { id, value, checked } = e.currentTarget;
+    const { id, checked, value } = e.currentTarget;
 
     let updatedValue = {};
 
@@ -209,16 +234,21 @@ const ImageForm = () => {
     </select>
   );
 
+  const imgDiv = (
+    <div className={classes.imgDiv}>
+      <img
+        src={imgUrl}
+        alt="celestial body"
+        onLoad={imgOnLoadHandler}
+        className={classes.img}
+      />
+      <span>'Right click' and 'Save image as' to download</span>
+    </div>
+  );
+
   return (
     <>
-      {imgUrl !== '' && (
-        <img
-          src={imgUrl}
-          alt="celestial body"
-          onLoad={imgOnLoadHandler}
-          className={classes.img}
-        />
-      )}
+      {imgUrl !== '' && imgDiv}
       {isLoading && <Spinner />}
       <form onSubmit={submitHandler} className={classes.form}>
         <label htmlFor="width" className={classes.label}>
@@ -229,6 +259,7 @@ const ImageForm = () => {
           id="width"
           value={imageFormData.width}
           onChange={inputOnChangeHandler}
+          onBlur={inputOnBlurHandler}
           min={MIN_WIDTH}
           max={MAX_WIDTH}
           className={classes.input}
@@ -241,6 +272,7 @@ const ImageForm = () => {
           id="height"
           value={imageFormData.height}
           onChange={inputOnChangeHandler}
+          onBlur={inputOnBlurHandler}
           min={MIN_HEIGHT}
           max={MAX_HEIGHT}
           className={classes.input}

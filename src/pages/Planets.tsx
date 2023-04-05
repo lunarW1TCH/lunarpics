@@ -1,7 +1,7 @@
 import ImageForm from '../components/image/ImageForm';
 import Card from '../components/UI/Card';
 
-import classes from './Planets.module.css';
+import classes from './Page.module.css';
 
 const PlanetsPage = () => {
   return (
