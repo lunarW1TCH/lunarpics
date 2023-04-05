@@ -1,15 +1,18 @@
 import { Outlet } from 'react-router-dom';
 import MainNavigation from '../components/MainNavigation';
+import Footer from '../components/Footer';
 
-const RootLayout: React.FC = () => {
+import classes from './Root.module.css';
+
+const RootLayout = () => {
   return (
-    <>
+    <div className={classes.div}>
       <MainNavigation />
-      <main>
-        <p> polska</p>
+      <main className={classes.main}>
         <Outlet />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 };
 

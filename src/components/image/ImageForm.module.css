@@ -1,0 +1,45 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 20rem;
+  padding: 2rem;
+}
+
+input {
+  display: flex;
+  flex-grow: 1;
+  width: 3rem;
+}
+
+label {
+  display: flex;
+  width: 10rem;
+  flex-grow: 10;
+}
+
+button {
+  display: flex;
+  width: 5rem;
+  border: none;
+  background: none;
+  font-size: larger;
+  padding-top: 1rem;
+}
+button:hover {
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+select {
+  display: flex;
+  width: 20rem;
+}
+
+img {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

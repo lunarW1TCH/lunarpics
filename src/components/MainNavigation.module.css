@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 28px;
+  width: 100%;
 }
 
 .list {
@@ -13,10 +15,17 @@
 
 .list a {
   text-decoration: none;
-  color: var(--color-text-primary);
 }
 
 .list a:hover,
 .list a:active {
-  color: var(--color-text-secondary);
+  color: var(--color-secondary);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.inactive {
+  color: var(--color-light);
 }
