@@ -1,15 +1,19 @@
+import { useTranslation } from 'react-i18next';
+
 const OptionsElemental = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <option value={'1'}>Water</option>
-      <option value={'2'}>Earth</option>
-      <option value={'3'}>Wind</option>
-      <option value={'4'}>Holy</option>
-      <option value={'5'}>Dark</option>
-      <option value={'6'}>Ice</option>
-      <option value={'7'}>Metal</option>
-      <option value={'8'}>Lava</option>
-      <option value={'9'}>Toxic</option>
+      <option value={'1'}>{t('oElementalWater')}</option>
+      <option value={'2'}>{t('oElementalEarth')}</option>
+      <option value={'3'}>{t('oElementalWind')}</option>
+      <option value={'4'}>{t('oElementalHoly')}</option>
+      <option value={'5'}>{t('oElementalDark')}</option>
+      <option value={'6'}>{t('oElementalIce')}</option>
+      <option value={'7'}>{t('oElementalMetal')}</option>
+      <option value={'8'}>{t('oElementalLava')}</option>
+      <option value={'9'}>{t('oElementalToxic')}</option>
     </>
   );
 };

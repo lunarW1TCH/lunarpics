@@ -5,6 +5,7 @@
   display: flex;
   text-align: center;
   justify-content: space-around;
+  align-content: center;
   font-size: $font-header;
 }
 
@@ -29,4 +30,13 @@
 
 .inactive {
   color: $light-color;
+}
+
+.select {
+  padding: 0;
+  right: 2rem;
+  margin-top: 2rem;
+  position: absolute;
+  justify-self: end;
+  float: right;
 }

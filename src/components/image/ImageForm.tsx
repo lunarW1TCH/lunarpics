@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   MAX_HEIGHT,
   MAX_WIDTH,
@@ -17,6 +18,8 @@ import OptionsStars from '../options/OptionsStars';
 import OptionsPlanets from '../options/OptionsPlanets';
 
 const ImageForm = () => {
+  const { t } = useTranslation();
+
   // states
   const [imageFormData, setImageFormData] = useState<ImageFormData>({
     width: MAX_WIDTH / 2,
@@ -161,11 +164,6 @@ const ImageForm = () => {
     }));
   };
 
-  const imgOnLoadHandler = () => {
-    // set isLoading flag to false to stop rendering Spinner
-    setIsLoading(false);
-  };
-
   // select elements
 
   const selectElemental = (
@@ -208,11 +206,11 @@ const ImageForm = () => {
     <div className={classes.containerImage}>
       <img
         src={imgUrl}
-        alt="celestial body"
-        onLoad={imgOnLoadHandler}
+        alt={isPlanets ? String(t('imgAltPlanet')) : String(t('imgAltStar'))}
+        onLoad={() => setIsLoading(false)}
         className={classes.image}
       />
-      <span>'Right click' and 'Save image as' to download</span>
+      <span>{t('spanHover')}</span>
     </div>
   );
 
@@ -222,7 +220,7 @@ const ImageForm = () => {
       {isLoading && <Spinner />}
       <form onSubmit={submitHandler} className={classes.form}>
         <label htmlFor="width" className={classes.label}>
-          Width
+          {t('formWidth')}
         </label>
         <input
           type="number"
@@ -235,7 +233,7 @@ const ImageForm = () => {
           className={classes.input}
         />
         <label htmlFor="height" className={classes.label}>
-          Height
+          {t('formHeight')}
         </label>
         <input
           type="number"
@@ -248,7 +246,7 @@ const ImageForm = () => {
           className={classes.input}
         />
         <label htmlFor="disableBackground" className={classes.label}>
-          Disable Background
+          {t('formDisableBackground')}
         </label>
         <input
           type="checkbox"
@@ -258,7 +256,7 @@ const ImageForm = () => {
           className={classes.checkbox}
         />
         <label htmlFor="disableStars" className={classes.label}>
-          Disable Stars
+          {t('formDisableStars')}
         </label>
         <input
           type="checkbox"
@@ -269,7 +267,7 @@ const ImageForm = () => {
         />
         {isPlanets && (
           <label htmlFor="disableSatellites" className={classes.label}>
-            Disable Satellites
+            {t('formDisableSatellites')}
           </label>
         )}
         {isPlanets && (
@@ -282,18 +280,18 @@ const ImageForm = () => {
           />
         )}
         <label htmlFor="colorMode" className={classes.label}>
-          Style
+          {t('formStyle')}
         </label>
         {isPlanets && selectPlanets}
         {isPlanets && imageFormData.isElemental && (
           <label htmlFor="subColorMode" className={classes.label}>
-            Substyle
+            {t('formSubstyle')}
           </label>
         )}
         {isPlanets && imageFormData.isElemental && selectElemental}
         {isStars && selectStars}
         <button className={classes.button} type="submit">
-          SUBMIT!
+          {t('formSubmit')}
         </button>
       </form>
     </>

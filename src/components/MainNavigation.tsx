@@ -1,8 +1,19 @@
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import OptionsLang from './options/OptionsLang';
 
 import classes from './MainNavigation.module.scss';
+import Select from './Select';
 
 const MainNavigation = () => {
+  const { t, i18n } = useTranslation();
+  const selectOnChangeHandler = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+  ): void => {
+    const { value } = e.currentTarget;
+    i18n.changeLanguage(value);
+  };
+
   return (
     <header className={classes.header}>
       <nav>
@@ -14,7 +25,7 @@ const MainNavigation = () => {
               }
               to="/"
             >
-              Home
+              {t('navigationHome')}
             </NavLink>
           </li>
           <li>
@@ -24,7 +35,7 @@ const MainNavigation = () => {
               }
               to="/planets"
             >
-              Planets
+              {t('navigationPlanets')}
             </NavLink>
           </li>
           <li>
@@ -34,11 +45,19 @@ const MainNavigation = () => {
               }
               to="/stars"
             >
-              Stars
+              {t('navigationStars')}
             </NavLink>
           </li>
         </ul>
       </nav>
+      <Select
+        className={classes.select}
+        id="selectLang"
+        name="lang"
+        onChange={selectOnChangeHandler}
+      >
+        <OptionsLang />
+      </Select>
     </header>
   );
 };
