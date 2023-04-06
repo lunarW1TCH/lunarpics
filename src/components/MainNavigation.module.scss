@@ -7,6 +7,17 @@
   justify-content: space-around;
   align-content: center;
   font-size: $font-header;
+  @media (max-width: 650px) {
+    font-size: $font-base;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 }
 
 .list {
@@ -22,6 +33,10 @@
       color: $secondary-color;
     }
   }
+
+  @media (max-width: 650px) {
+    gap: 1rem;
+  }
 }
 
 .active {
@@ -33,10 +48,40 @@
 }
 
 .select {
-  padding: 0;
-  right: 2rem;
-  margin-top: 2rem;
-  position: absolute;
-  justify-self: end;
-  float: right;
+  display: flex;
+  bottom: 0;
+  margin-left: 1rem;
+  color: $light-color;
+  font-size: $font-header;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  @media (max-width: 650px) {
+    font-size: $font-base;
+
+    option {
+      font-size: $font-base;
+    }
+  }
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+
+    option {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+
+    option {
+      font-size: 14px;
+    }
+  }
+
+  option {
+    color: $dark-color;
+  }
 }

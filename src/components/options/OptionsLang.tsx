@@ -2,7 +2,7 @@ const OptionsLang = () => {
   return (
     <>
       <option value="en">English</option>
-      <option value="pl">Polish</option>
+      <option value="pl">Polski</option>
     </>
   );
 };
