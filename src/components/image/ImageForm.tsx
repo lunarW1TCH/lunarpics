@@ -269,7 +269,7 @@ const ImageForm = () => {
         />
         {isPlanets && (
           <label htmlFor="disableSatellites" className={classes.label}>
-            Disable Satelites
+            Disable Satellites
           </label>
         )}
         {isPlanets && (
