@@ -38,6 +38,11 @@
     cursor: pointer;
     background-color: $secondary-color;
   }
+
+  @supports (-webkit-touch-callout: none) {
+    padding: 0;
+    color: $dark-color;
+  }
 }
 
 .select {
