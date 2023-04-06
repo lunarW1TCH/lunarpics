@@ -1,7 +1,6 @@
 const OptionsPlanets = () => {
   return (
     <>
-      <option value={'0'}>Analogous</option>
       <option value={'1'}>Complimentary</option>
       <option value={'2'}>Split Complimentary</option>
       <option value={'3'}>Triad</option>

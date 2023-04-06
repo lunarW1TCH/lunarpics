@@ -1,7 +1,6 @@
 const OptionsElemental = () => {
   return (
     <>
-      <option value={'0'}>Fire</option>
       <option value={'1'}>Water</option>
       <option value={'2'}>Earth</option>
       <option value={'3'}>Wind</option>

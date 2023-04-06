@@ -24,8 +24,8 @@ const ImageForm = () => {
     disableBackground: false,
     disableStars: false,
     disableSatellites: false,
-    colorMode: '0',
-    subColorModePlanets: '0',
+    colorMode: '1',
+    subColorModePlanets: '1',
     subColorModeStars: '1',
     isElemental: false,
   });
