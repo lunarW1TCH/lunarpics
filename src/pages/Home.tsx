@@ -1,12 +1,14 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Card from '../components/UI/Card';
+import { useScrollToTop } from '../helpers/helpers';
 import planet from '../images/planets.png';
 import star from '../images/stars.png';
 
 import classes from './Home.module.scss';
 
 const HomePage = () => {
+  useScrollToTop();
+
   return (
     <>
       <h1 className={classes.h1}>Home</h1>

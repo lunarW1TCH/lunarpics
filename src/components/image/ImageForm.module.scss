@@ -12,6 +12,7 @@
 .input {
   width: 3rem;
   margin-left: 3rem;
+  font-size: $font-input;
 }
 
 .checkbox {
@@ -47,6 +48,7 @@
 
 .select {
   width: 8rem;
+  font-size: $font-input;
 }
 
 .image {
