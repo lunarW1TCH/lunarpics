@@ -31,6 +31,6 @@
   "oPlanetsEarth": "Ziemska",
   "oPlanetsCavity": "Jamista",
   "oPlanetsElemental": "Żywiołowa",
-  "imgAltPlanet": "Planeta",
-  "imgAltStar": "Gwiazda"
+  "imgAltPlanet": " Planeta, Hej, jeśli widzisz ten tekst zamiast zdjęcia, oznacza to że API może obecnie nie działać, proszę spróbuj ponownie później :D",
+  "imgAltStar": " Gwiazda, Hej, jeśli widzisz ten tekst zamiast zdjęcia, oznacza to że API może obecnie nie działać, proszę spróbuj ponownie później :D"
 }

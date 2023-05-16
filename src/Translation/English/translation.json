@@ -31,6 +31,6 @@
   "oPlanetsCavity": "Cavity",
   "oPlanetsEarth": "Earth",
   "oPlanetsElemental": "Elemental",
-  "imgAltPlanet": "Planet",
-  "imgAltStar": "Star"
+  "imgAltPlanet": " Planet, Hey, if you're seeing this instead of the picture, this means API is probably unavailable right now. Please try again later :D",
+  "imgAltStar": " Star, Hey, if you're seeing this instead of the picture, this means API is probably unavailable right now. Please try again later :D"
 }
