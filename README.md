@@ -4,3 +4,4 @@ This is a simple website which generates random pixel art images of stars and pl
 
 It is written using React and TypeScript
 
+https://pixelencounter.com/api - api that I used for generating pictures is currently down.
